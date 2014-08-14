@@ -4,7 +4,8 @@
 void ofApp::setup(){
     ofBackground(0);
     ofEnableBlendMode(OF_BLENDMODE_ADD);
-    //cam.setFov(80);
+    cam.setFov(80);
+    cam.setDistance(600);
     
     // ofxVboParticles([max particle number], [particle size]);
     vboPartciles = new ofxVboParticles(20000, 1000);
@@ -17,8 +18,8 @@ void ofApp::setup(){
 
 //--------------------------------------------------------------
 void ofApp::update(){
-    particlePosition.z = sin(ofGetElapsedTimef()) * 300;
-    particlePosition.x  = cos(ofGetElapsedTimef()) * 300;
+    particlePosition.z = sin(ofGetElapsedTimef()) * 400;
+    particlePosition.x  = cos(ofGetElapsedTimef()) * 400;
     particlePosition.y  = sin(ofGetElapsedTimef() / 2.0) * 100;
 
 
@@ -26,7 +27,7 @@ void ofApp::update(){
         ofVec3f position = particlePosition;
         ofVec3f velocity = ofVec3f(ofRandom(-1, 1), ofRandom(-1, 1), ofRandom(-1, 1));
         ofColor color;
-        color.setHsb(ofRandom(100, 160), 80, 220);
+        color.setHsb(ofRandom(80, 180), 80, 220);
         
         // add a particle
         vboPartciles->addParticle(position, velocity, color);
@@ -40,7 +41,7 @@ void ofApp::draw(){
     ofBackgroundGradient(ofColor(127), ofColor(0), OF_GRADIENT_CIRCULAR);
     
     cam.begin();
-    ofRotate(ofGetElapsedTimef() * 5, 1, 1, 0);
+    ofRotate(ofGetElapsedTimef() * 10, 0, 1, 1);
     vboPartciles->draw();
     cam.end();
     
