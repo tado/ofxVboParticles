@@ -2,21 +2,22 @@
 
 //--------------------------------------------------------------
 void ofApp::setup(){
-    //ofSetFrameRate(60);
     ofBackground(0);
-    vboPartciles = new ofxVboParticles(50000, 1000);
+    ofEnableBlendMode(OF_BLENDMODE_ADD);
+    cam.setFov(80);
+    
+    vboPartciles = new ofxVboParticles(10000, 1000);
+    vboPartciles->friction = 0.005;
 }
 
 //--------------------------------------------------------------
 void ofApp::update(){
     for (int i = 0; i < 10; i++) {
-        ofVec3f pos = ofVec3f(ofRandom(-ofGetWidth()/2, ofGetWidth()/2),
-                              ofRandom(-ofGetWidth()/2, ofGetWidth()/2),
-                              ofRandom(-ofGetWidth()/2, ofGetWidth()/2));
+        ofVec3f pos = ofVec3f(0, 0, 0);
+        ofVec3f vel = ofVec3f(ofRandom(-2, 2), ofRandom(-2, 2), ofRandom(-2, 2));
         ofColor col;
         col.setHsb(ofRandom(255), 63, 200);
-        
-        vboPartciles->addParticle(pos, col);
+        vboPartciles->addParticle(pos, vel, col);
     }
 
     vboPartciles->update();
@@ -26,13 +27,13 @@ void ofApp::update(){
 void ofApp::draw(){
     cam.begin();
     ofRotateX(20);
-    ofRotateY(ofGetElapsedTimef() * 20.0);
+    ofRotate(ofGetElapsedTimef() * 20, 1, 1, 0);
     vboPartciles->draw();
     cam.end();
     
     ofSetColor(255);
     ofDrawBitmapString(ofToString(ofGetFrameRate(), 4) + "fps", 20, 20);
-    ofDrawBitmapString(ofToString(vboPartciles->numParticles, 0), 20, 40);
+    ofDrawBitmapString("particle num = " + ofToString(vboPartciles->numParticles, 0), 20, 40);
 }
 
 //--------------------------------------------------------------

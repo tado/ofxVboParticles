@@ -10,18 +10,23 @@
 
 class ofxVboParticles {
 public:
-    ofxVboParticles(int maxParticles = 1000, float pointSize = 1000);
+    ofxVboParticles(int maxParticles = 10000, float pointSize = 1000);
     void update();
     void draw();
-    void addParticle(ofVec3f position = ofVec3f(0, 0, 0), ofColor color = 0xffffff);
+    void addParticle(ofVec3f position = ofVec3f(0, 0, 0),
+                     ofVec3f velocity = ofVec3f(0, 0, 0),
+                     ofColor color = 0xffffff);
     
     int maxParticles;
     float pointSize;
 
     int numParticles;
-    //deque<float> billboardSize;
     deque<ofVec3f> positions;
-    deque<ofColor> billboardColor;
+    deque<ofVec3f> velocitys;
+    deque<ofVec3f> forces;
+    deque<ofColor> colors;
+    float friction;
+    
     ofShader billboardShader;
     ofImage texture;
     ofVboMesh billboards;
