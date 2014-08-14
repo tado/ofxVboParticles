@@ -5,7 +5,7 @@ VBO billboard particle system for oepnFrameworks.
 
 ![screen](screen.png)
 
-http://vimeo.com/103402020
+http://vimeo.com/103404349
 
 # License
 
