@@ -17,11 +17,12 @@ void ofApp::setup(){
 
 //--------------------------------------------------------------
 void ofApp::update(){
-    particlePosition.z  = sin(ofGetElapsedTimef()) * 300;
-    particlePosition.y  = sin(ofGetElapsedTimef() / 2.0) * 100;
+    particlePosition.z = sin(ofGetElapsedTimef()) * 300;
     particlePosition.x  = cos(ofGetElapsedTimef()) * 300;
+    particlePosition.y  = sin(ofGetElapsedTimef() / 2.0) * 100;
 
-    for (int i = 0; i < 10; i++) {
+
+    for (int i = 0; i < 40; i++) {
         ofVec3f position = particlePosition;
         ofVec3f velocity = ofVec3f(ofRandom(-1, 1), ofRandom(-1, 1), ofRandom(-1, 1));
         ofColor color;
