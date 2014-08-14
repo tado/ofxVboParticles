@@ -3,7 +3,7 @@ ofxVboParticles
 
 VBO billboard particle system for oepnFrameworks.
 
-{% vimeo 103402020 %}
+VM("http://vimeo.com/103402020", print = TRUE)
 
 # License
 
