@@ -27,7 +27,7 @@ void ofApp::update(){
         ofVec3f position = particlePosition;
         ofVec3f velocity = ofVec3f(ofRandom(-1, 1), ofRandom(-1, 1), ofRandom(-1, 1));
         ofColor color;
-        color.setHsb(ofRandom(80, 180), 80, 220);
+        color.setHsb(ofRandom(60, 160), 100, 220);
         
         // add a particle
         vboPartciles->addParticle(position, velocity, color);
