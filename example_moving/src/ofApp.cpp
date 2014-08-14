@@ -37,6 +37,8 @@ void ofApp::update(){
 
 //--------------------------------------------------------------
 void ofApp::draw(){
+    ofBackgroundGradient(ofColor(127), ofColor(0), OF_GRADIENT_CIRCULAR);
+    
     cam.begin();
     ofRotate(ofGetElapsedTimef() * 5, 1, 1, 0);
     vboPartciles->draw();
