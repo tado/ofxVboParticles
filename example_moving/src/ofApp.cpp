@@ -7,7 +7,7 @@ void ofApp::setup(){
     //cam.setFov(80);
     
     // ofxVboParticles([max particle number], [particle size]);
-    vboPartciles = new ofxVboParticles(10000, 1000);
+    vboPartciles = new ofxVboParticles(20000, 1000);
 
     // set friction (0.0 - 1.0);
     vboPartciles->friction = 0.001;
