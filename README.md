@@ -3,7 +3,7 @@ ofxVboParticles
 
 VBO billboard particle system for oepnFrameworks.
 
-![screen](https://i.vimeocdn.com/video/485635196_960.png)
+![screen](screen.png)
 
 http://vimeo.com/103404349
 
