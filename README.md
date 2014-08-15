@@ -1,7 +1,7 @@
 ofxVboParticles
 ===============
 
-VBO billboard particle system for oepnFrameworks.
+VBO billboard particle system for openFrameworks.
 
 ![screen](screen.png)
 
